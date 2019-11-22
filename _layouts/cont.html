@@ -1,89 +1,16 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Rectangle Mobile Template</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/font-awesome.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/templatemo-style.css">
-<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-</head>
-<body>
-<!--[if lt IE 7]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+---
+layout: bb
+---
 
-<div class="site-bg"></div>
-<div class="site-bg-overlay"></div>
-
-<!-- TOP HEADER -->
-<div class="top-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<p class="phone-info">Call us: <a href="#">010 020 0340</a></p>
-			</div>
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<div class="social-icons">
-					<ul>
-						<li><a href="#" class="fa fa-facebook"></a></li>
-						<li><a href="#" class="fa fa-twitter"></a></li>
-						<li><a href="#" class="fa fa-linkedin"></a></li>
-						<li><a href="#" class="fa fa-dribbble"></a></li>
-						<li><a href="#" class="fa fa-rss"></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> <!-- .top-header -->
-<div class="visible-xs visible-sm responsive-menu">
-	<a href="#" class="toggle-menu">
-		<i class="fa fa-bars"></i> Show Menu
-	</a>
-	<div class="show-menu">
-		<ul class="main-menu">
-			<li>
-				<a class="show-1 active homebutton" href="#"><i class="fa fa-home"></i>Home</a>
-			</li>
-			<li>
-				<a class="show-2 aboutbutton" href="#"><i class="fa fa-user"></i>About Us</a>
-			</li>
-			<li>
-				<a class="show-3 projectbutton" href="#"><i class="fa fa-camera"></i>Gallery</a>
-			</li>
-			<li>
-				<a class="show-5 contactbutton" href="#"><i class="fa fa-envelope"></i>Contact</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="copyrights">Collect from <a href="http://www.mycodes.net" >免费模板</a></div>
-<div class="container" id="page-content">
-	<div class="row">
-
-
-		
-		<div class="col-md-9 col-sm-12 content-holder">
-			<!-- CONTENT -->
-			<div id="menu-container">
-				
-				<div class="logo-holder logo-top-margin">
-					<a href="#" class="site-brand"><img src="images/logo.png" alt=""></a>
-				</div>
-				
 				
 				<div id="menu-1" class="homepage home-section text-center">
+				{% for post in site.posts %}
 					<div class="welcome-text">
-						<h2>Hello, Welcome to <strong>RECTANGLE</strong></h2>
-						<p>Rectangle is free mobile template brought to you by <span class="orange">template</span><span class="green">mo</span>.com website. You can download, edit and use this layout for any purpose. Please tell your friends about our website. Thank you.</p>
+						<h2>{{post.title}}<strong>RECTANGLE</strong></h2>
+						<p>{{post.excerpt|strip_html|truncate:100}}</p>
+						 <span class="meta">Posted by
+			            <a href="#">{{post.author|default: site.author}}</a>
+			            on {{post.date|date_to_long_string}}</span>
 						<form action="#" method="get" class="subscribe-form">
 							<div class="row">
 								<fieldset class="col-md-offset-2 col-md-6">
@@ -96,6 +23,7 @@
 							<p class="subscribe-text">Please subscribe your email for latest updates!</p>
 						</form>
 					</div>
+					{% endfor %}
 				</div>
 
 				<div id="menu-2" class="content about-section">
@@ -281,9 +209,6 @@
 					</div>
 				</div>
 
-			</div>
-		</div>
-
 
 		<div class="col-md-3 hidden-sm">
 			
@@ -319,9 +244,9 @@
 	</div>
 </div> <!-- .site-footer -->
 
-<script src="js/vendor/jquery-1.10.2.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/vendor/jquery-1.10.2.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
 <!-- templatemo 439 rectangle -->
 </body>
 </html>
